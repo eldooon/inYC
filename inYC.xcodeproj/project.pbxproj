@@ -12,6 +12,9 @@
 		BECD65C71DD7A85B00971DD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BECD65C51DD7A85B00971DD6 /* Main.storyboard */; };
 		BECD65C91DD7A85B00971DD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BECD65C81DD7A85B00971DD6 /* Assets.xcassets */; };
 		BECD65CC1DD7A85B00971DD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BECD65CA1DD7A85B00971DD6 /* LaunchScreen.storyboard */; };
+		BECD65D61DD7B5F500971DD6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD65D51DD7B5F500971DD6 /* SearchViewController.swift */; };
+		BECD65D81DD7B5FD00971DD6 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD65D71DD7B5FD00971DD6 /* UpcomingViewController.swift */; };
+		BECD65DA1DD7B60400971DD6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD65D91DD7B60400971DD6 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		BECD65C81DD7A85B00971DD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BECD65CB1DD7A85B00971DD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BECD65CD1DD7A85B00971DD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BECD65D51DD7B5F500971DD6 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BECD65D71DD7B5FD00971DD6 /* UpcomingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
+		BECD65D91DD7B60400971DD6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,9 @@
 			children = (
 				BECD65C11DD7A85B00971DD6 /* AppDelegate.swift */,
 				BECD65C31DD7A85B00971DD6 /* HomeViewController.swift */,
+				BECD65D51DD7B5F500971DD6 /* SearchViewController.swift */,
+				BECD65D71DD7B5FD00971DD6 /* UpcomingViewController.swift */,
+				BECD65D91DD7B60400971DD6 /* ProfileViewController.swift */,
 				BECD65C51DD7A85B00971DD6 /* Main.storyboard */,
 				BECD65C81DD7A85B00971DD6 /* Assets.xcassets */,
 				BECD65CA1DD7A85B00971DD6 /* LaunchScreen.storyboard */,
@@ -137,6 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BECD65D81DD7B5FD00971DD6 /* UpcomingViewController.swift in Sources */,
+				BECD65D61DD7B5F500971DD6 /* SearchViewController.swift in Sources */,
+				BECD65DA1DD7B60400971DD6 /* ProfileViewController.swift in Sources */,
 				BECD65C41DD7A85B00971DD6 /* HomeViewController.swift in Sources */,
 				BECD65C21DD7A85B00971DD6 /* AppDelegate.swift in Sources */,
 			);
@@ -300,6 +312,7 @@
 				BECD65D21DD7A85B00971DD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

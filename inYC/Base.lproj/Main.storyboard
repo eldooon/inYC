@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="924" y="-645.42728635682158"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="9rn-t2-V38">
             <objects>
-                <viewController id="Kqs-D7-ZLP" sceneMemberID="viewController">
+                <viewController id="Kqs-D7-ZLP" customClass="SearchViewController" customModule="inYC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5nH-4W-fT6"/>
                         <viewControllerLayoutGuide type="bottom" id="cxe-RY-SPr"/>
@@ -72,6 +72,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="hUi-O9-yuw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="wcz-xP-oJK">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -105,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="924" y="115"/>
         </scene>
-        <!--View Controller-->
+        <!--Upcoming View Controller-->
         <scene sceneID="2dQ-S5-E7g">
             <objects>
-                <viewController id="qb6-Mq-RYj" sceneMemberID="viewController">
+                <viewController id="qb6-Mq-RYj" customClass="UpcomingViewController" customModule="inYC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wda-FL-gPL"/>
                         <viewControllerLayoutGuide type="bottom" id="GXp-X7-DWK"/>
@@ -124,10 +125,10 @@
             </objects>
             <point key="canvasLocation" x="1860" y="785.75712143928047"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="Ven-vG-RjK">
             <objects>
-                <viewController id="EU8-wT-Ycl" sceneMemberID="viewController">
+                <viewController id="EU8-wT-Ycl" customClass="ProfileViewController" customModule="inYC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zdg-hv-JSa"/>
                         <viewControllerLayoutGuide type="bottom" id="nSo-if-roA"/>
