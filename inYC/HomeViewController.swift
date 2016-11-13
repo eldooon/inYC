@@ -11,6 +11,8 @@ import SnapKit
 
 class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
     
+    let scrollView = UIScrollView()
+    let contentView = UIView()
     let nearYouImageView = UILabel()
     var eventCollectionView : UICollectionView!
     let dividerLine = UIImageView()
@@ -36,50 +38,67 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         
         view.backgroundColor = UIColor.white
         
-        view.addSubview(nearYouImageView)
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { (make) in
+            make.left.equalTo(view.snp.left)
+            make.right.equalTo(view.snp.right)
+            make.top.equalTo(view.snp.top)
+            make.bottom.equalTo(view.snp.bottom)
+        }
+        
+        scrollView.addSubview(contentView)
+        scrollView.sizeToFit()
+        contentView.snp.makeConstraints { (make) in
+            make.width.equalTo(scrollView.snp.width)
+            make.height.equalTo(view.snp.height).multipliedBy(1.4)
+            make.top.equalTo(scrollView.snp.top)
+            make.bottom.equalTo(scrollView.snp.bottom)
+        }
+        
+        contentView.addSubview(nearYouImageView)
         nearYouImageView.text = "Near you:"
         nearYouImageView.font = UIFont.inYCNormalWithSize(with: 18)
         nearYouImageView.textColor = UIColor.primaryColorDark()
         nearYouImageView.addTextSpacing(spacing: 1.2)
         nearYouImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(view.snp.top).offset(80)
-            make.left.equalTo(view.snp.left).offset(15)
+            make.top.equalTo(contentView.snp.top).offset(10)
+            make.left.equalTo(contentView.snp.left).offset(15)
         }
         
-        self.view.addSubview(eventCollectionView)
+        contentView.addSubview(eventCollectionView)
         eventCollectionView.backgroundColor = UIColor.clear
         eventCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(nearYouImageView.snp.bottom)
-            make.bottom.equalTo(view.snp.centerY)
-            make.left.equalTo(view.snp.left).offset(10)
-            make.right.equalTo(view.snp.right).offset(-10)
+            make.height.equalTo(view.snp.height).dividedBy(3)
+            make.left.equalTo(contentView.snp.left).offset(10)
+            make.right.equalTo(contentView.snp.right).offset(-10)
         }
         
-        self.view.addSubview(dividerLine)
+        contentView.addSubview(dividerLine)
         dividerLine.backgroundColor = UIColor.primaryColor()
         dividerLine.snp.makeConstraints { (make) in
             make.width.equalTo(view.snp.width).offset(-50)
             make.height.equalTo(1)
             make.top.equalTo(eventCollectionView.snp.bottom).offset(10)
-            make.centerX.equalTo(view.snp.centerX)
+            make.centerX.equalTo(contentView.snp.centerX)
         }
         
-        self.view.addSubview(featuredLabel)
+        contentView.addSubview(featuredLabel)
         featuredLabel.text = "Featured Events:"
         featuredLabel.font = UIFont.inYCNormalWithSize(with: 18)
         featuredLabel.textColor = UIColor.primaryColorDark()
         featuredLabel.addTextSpacing(spacing: 1.2)
         featuredLabel.snp.makeConstraints { (make) in
             make.top.equalTo(dividerLine.snp.bottom).offset(15)
-            make.left.equalTo(view.snp.left).offset(10)
+            make.left.equalTo(contentView.snp.left).offset(10)
         }
 
-        self.view.addSubview(featuredTableView)
+        contentView.addSubview(featuredTableView)
         featuredTableView.snp.makeConstraints { (make) in
             make.top.equalTo(featuredLabel.snp.bottom).offset(15)
-            make.left.equalTo(view.snp.left)
-            make.right.equalTo(view.snp.right)
-            make.bottom.equalTo(view.snp.bottom)
+            make.left.equalTo(contentView.snp.left)
+            make.right.equalTo(contentView.snp.right)
+            make.bottom.equalTo(contentView.snp.bottom)
         }
     }
     
@@ -146,6 +165,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         featuredTableView.separatorStyle = .none
         featuredTableView.rowHeight = 150
         featuredTableView.showsVerticalScrollIndicator = false
+        featuredTableView.isScrollEnabled = false
     }
     
     func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
