@@ -9,19 +9,21 @@
 import UIKit
 import SnapKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
     
-    var collectionView: UICollectionView!
     let nearYouImageView = UILabel()
-    let scrollView = UIScrollView()
-    let contentView = UIView()
-    let event1Button = UIButton()
+    var eventCollectionView : UICollectionView!
+    let dividerLine = UIImageView()
+    let featuredLabel = UILabel()
+    var featuredTableView = UITableView()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        setUpCollectionCells()
+        setUpEventCollectionCells()
+        setUpFeaturedTableViewCells()
         createLayout()
     }
 
@@ -36,25 +38,52 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         
         view.addSubview(nearYouImageView)
         nearYouImageView.text = "Near you:"
-        nearYouImageView.font = UIFont.inYCNormal()
-        nearYouImageView.textColor = UIColor.primaryColor()
+        nearYouImageView.font = UIFont.inYCNormalWithSize(with: 18)
+        nearYouImageView.textColor = UIColor.primaryColorDark()
+        nearYouImageView.addTextSpacing(spacing: 1.2)
         nearYouImageView.snp.makeConstraints { (make) in
             make.top.equalTo(view.snp.top).offset(80)
-            make.left.equalTo(view.snp.left).offset(10)
+            make.left.equalTo(view.snp.left).offset(15)
         }
         
-        self.view.addSubview(collectionView)
-        collectionView.backgroundColor = UIColor.clear
-        collectionView.snp.makeConstraints { (make) in
+        self.view.addSubview(eventCollectionView)
+        eventCollectionView.backgroundColor = UIColor.clear
+        eventCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(nearYouImageView.snp.bottom)
             make.bottom.equalTo(view.snp.centerY)
             make.left.equalTo(view.snp.left).offset(10)
             make.right.equalTo(view.snp.right).offset(-10)
         }
+        
+        self.view.addSubview(dividerLine)
+        dividerLine.backgroundColor = UIColor.primaryColor()
+        dividerLine.snp.makeConstraints { (make) in
+            make.width.equalTo(view.snp.width).offset(-50)
+            make.height.equalTo(1)
+            make.top.equalTo(eventCollectionView.snp.bottom).offset(10)
+            make.centerX.equalTo(view.snp.centerX)
+        }
+        
+        self.view.addSubview(featuredLabel)
+        featuredLabel.text = "Featured Events:"
+        featuredLabel.font = UIFont.inYCNormalWithSize(with: 18)
+        featuredLabel.textColor = UIColor.primaryColorDark()
+        featuredLabel.addTextSpacing(spacing: 1.2)
+        featuredLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(dividerLine.snp.bottom).offset(15)
+            make.left.equalTo(view.snp.left).offset(10)
+        }
 
+        self.view.addSubview(featuredTableView)
+        featuredTableView.snp.makeConstraints { (make) in
+            make.top.equalTo(featuredLabel.snp.bottom).offset(15)
+            make.left.equalTo(view.snp.left)
+            make.right.equalTo(view.snp.right)
+            make.bottom.equalTo(view.snp.bottom)
+        }
     }
     
-    func setUpCollectionCells() {
+    func setUpEventCollectionCells() {
         
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
@@ -67,13 +96,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         layout.minimumLineSpacing = 20
         layout.minimumInteritemSpacing = 5
         
-        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "basicCell")
-        collectionView?.register(EventCollectionViewCell.self, forCellWithReuseIdentifier: "basicCell")
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.showsHorizontalScrollIndicator = false
+        eventCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        eventCollectionView.dataSource = self
+        eventCollectionView.delegate = self
+        eventCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "basicCell")
+        eventCollectionView.register(EventCollectionViewCell.self, forCellWithReuseIdentifier: "basicCell")
+        eventCollectionView.showsVerticalScrollIndicator = false
+        eventCollectionView.showsHorizontalScrollIndicator = false
         
         
     }
@@ -91,9 +120,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
-//        print("You selected cell #\(indexPath.item)!")
+        print("You selected cell #\(indexPath.item)!")
 //        let postDetailVC = PostDetailViewController()
 //        postDetailVC.delegate = self
 //        let post = shared.postArray[indexPath.item]
@@ -106,6 +135,44 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
 //        postDetailVC.itemImage = cell.postImage.image
 //        
 //        self.parentNavigationController?.pushViewController(postDetailVC, animated: true)
+    }
+    
+    func setUpFeaturedTableViewCells() {
+        
+        featuredTableView.register(LeftFeaturedEventTableViewCell.self, forCellReuseIdentifier: "leftCell")
+        featuredTableView.register(RightFeaturedEventTableViewCell.self, forCellReuseIdentifier: "rightCell")
+        featuredTableView.delegate = self
+        featuredTableView.dataSource = self
+        featuredTableView.separatorStyle = .none
+        featuredTableView.rowHeight = 150
+        featuredTableView.showsVerticalScrollIndicator = false
+    }
+    
+    func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 4
+    }
+    
+    
+    func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
+        
+        let cell : UITableViewCell
+        
+        if (indexPath.row % 2 == 0) {
+            cell = tableView.dequeueReusableCell(withIdentifier: "leftCell", for: indexPath as IndexPath) as! LeftFeaturedEventTableViewCell
+        }
+        
+        else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "rightCell", for: indexPath as IndexPath) as! RightFeaturedEventTableViewCell
+        }
+        
+        return cell
+        
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
     }
     
 

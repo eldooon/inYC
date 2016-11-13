@@ -44,6 +44,7 @@ class EventCollectionViewCell: UICollectionViewCell {
         eventOverlay.addSubview(eventLabel)
         eventLabel.text = "Event Name"
         eventLabel.font = UIFont.inYCBold()
+        eventLabel.addTextSpacing(spacing: 1.2)
         eventLabel.textColor = UIColor.white
         eventLabel.snp.makeConstraints { (make) in
             make.left.equalTo(eventOverlay.snp.left).offset(10)
@@ -53,6 +54,7 @@ class EventCollectionViewCell: UICollectionViewCell {
         eventOverlay.addSubview(dateLabel)
         dateLabel.text = "Date/time"
         dateLabel.font = UIFont.inYCNormal()
+        dateLabel.addTextSpacing(spacing: 1.2)
         dateLabel.textColor = UIColor.white
         dateLabel.snp.makeConstraints { (make) in
             make.right.equalTo(eventOverlay.snp.right).offset(-10)
@@ -62,6 +64,7 @@ class EventCollectionViewCell: UICollectionViewCell {
         eventOverlay.addSubview(locationLabel)
         locationLabel.text = "Location"
         locationLabel.font = UIFont.inYCNormal()
+        locationLabel.addTextSpacing(spacing: 1.2)
         locationLabel.textColor = UIColor.white
         locationLabel.snp.makeConstraints { (make) in
             make.left.equalTo(dateLabel.snp.left)
