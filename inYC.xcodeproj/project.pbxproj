@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74BE9B92FD22FB059364E6B5 /* Pods_inYC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DDF547F8D3E79B41335015 /* Pods_inYC.framework */; };
+		BE97AE291DD8F26700F03AA3 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97AE281DD8F26700F03AA3 /* EventCollectionViewCell.swift */; };
 		BECD65C21DD7A85B00971DD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD65C11DD7A85B00971DD6 /* AppDelegate.swift */; };
 		BECD65C41DD7A85B00971DD6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD65C31DD7A85B00971DD6 /* HomeViewController.swift */; };
 		BECD65C71DD7A85B00971DD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BECD65C51DD7A85B00971DD6 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E23E9B4963A63A22C6EE76C /* Pods-inYC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inYC.release.xcconfig"; path = "Pods/Target Support Files/Pods-inYC/Pods-inYC.release.xcconfig"; sourceTree = "<group>"; };
+		BE97AE281DD8F26700F03AA3 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		BECD65BE1DD7A85B00971DD6 /* inYC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inYC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECD65C11DD7A85B00971DD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BECD65C31DD7A85B00971DD6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +34,8 @@
 		BECD65D71DD7B5FD00971DD6 /* UpcomingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		BECD65D91DD7B60400971DD6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BECD65DD1DD8C9E200971DD6 /* inYCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inYCExtensions.swift; sourceTree = "<group>"; };
+		D1DDF547F8D3E79B41335015 /* Pods_inYC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inYC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8FDEB340E1EE51DFE8A6EEF /* Pods-inYC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inYC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-inYC/Pods-inYC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +43,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74BE9B92FD22FB059364E6B5 /* Pods_inYC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01A47432E133EA14213FF633 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F8FDEB340E1EE51DFE8A6EEF /* Pods-inYC.debug.xcconfig */,
+				3E23E9B4963A63A22C6EE76C /* Pods-inYC.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BECD65B51DD7A85A00971DD6 = {
 			isa = PBXGroup;
 			children = (
 				BECD65C01DD7A85B00971DD6 /* inYC */,
 				BECD65BF1DD7A85B00971DD6 /* Products */,
+				01A47432E133EA14213FF633 /* Pods */,
+				D4994519EEDE373ADAC4D2EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +80,7 @@
 		BECD65C01DD7A85B00971DD6 /* inYC */ = {
 			isa = PBXGroup;
 			children = (
+				BECD65DF1DD8DCF700971DD6 /* Views */,
 				BECD65DC1DD8C97200971DD6 /* Resources */,
 				BECD65DB1DD8C96300971DD6 /* Controllers */,
 				BECD65C11DD7A85B00971DD6 /* AppDelegate.swift */,
@@ -92,6 +111,22 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		BECD65DF1DD8DCF700971DD6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE97AE281DD8F26700F03AA3 /* EventCollectionViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D4994519EEDE373ADAC4D2EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D1DDF547F8D3E79B41335015 /* Pods_inYC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -99,9 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BECD65D01DD7A85B00971DD6 /* Build configuration list for PBXNativeTarget "inYC" */;
 			buildPhases = (
+				908FDBCFCCC62BC531FD2F26 /* [CP] Check Pods Manifest.lock */,
 				BECD65BA1DD7A85B00971DD6 /* Sources */,
 				BECD65BB1DD7A85B00971DD6 /* Frameworks */,
 				BECD65BC1DD7A85B00971DD6 /* Resources */,
+				7364A1893B9ADCEB3717E4E5 /* [CP] Embed Pods Frameworks */,
+				1EF6870B076CDE1A11AF1729 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,12 +198,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1EF6870B076CDE1A11AF1729 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-inYC/Pods-inYC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7364A1893B9ADCEB3717E4E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-inYC/Pods-inYC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		908FDBCFCCC62BC531FD2F26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BECD65BA1DD7A85B00971DD6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BECD65D81DD7B5FD00971DD6 /* UpcomingViewController.swift in Sources */,
+				BE97AE291DD8F26700F03AA3 /* EventCollectionViewCell.swift in Sources */,
 				BECD65D61DD7B5F500971DD6 /* SearchViewController.swift in Sources */,
 				BECD65DA1DD7B60400971DD6 /* ProfileViewController.swift in Sources */,
 				BECD65C41DD7A85B00971DD6 /* HomeViewController.swift in Sources */,
@@ -214,6 +301,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -263,6 +351,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -289,7 +378,9 @@
 		};
 		BECD65D11DD7A85B00971DD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8FDEB340E1EE51DFE8A6EEF /* Pods-inYC.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LQY7Q4QMHY;
 				INFOPLIST_FILE = inYC/Info.plist;
@@ -302,7 +393,9 @@
 		};
 		BECD65D21DD7A85B00971DD6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E23E9B4963A63A22C6EE76C /* Pods-inYC.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LQY7Q4QMHY;
 				INFOPLIST_FILE = inYC/Info.plist;

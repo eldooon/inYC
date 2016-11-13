@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="4Dm-77-n4f" kind="relationship" relationship="viewControllers" id="YoN-f8-qyX"/>
@@ -55,7 +55,7 @@
         <scene sceneID="wcw-R0-ZjX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eWo-9a-J4t" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Search" selectedImage="Search" id="Wcw-UN-jvs">
+                    <tabBarItem key="tabBarItem" title="" image="Search" selectedImage="SearchSelected" id="Wcw-UN-jvs">
                         <inset key="imageInsets" minX="0.0" minY="7.5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -114,7 +114,7 @@
         <scene sceneID="e62-6a-eRG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dhu-Nj-49E" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Upcoming" selectedImage="Upcoming" id="I7l-S2-5fy">
+                    <tabBarItem key="tabBarItem" title="" image="Upcoming" selectedImage="UpcomingSelected" id="I7l-S2-5fy">
                         <inset key="imageInsets" minX="0.0" minY="7.5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -135,7 +135,7 @@
         <scene sceneID="jpP-LH-t8C">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nS6-W8-5ey" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Profile" selectedImage="Profile" id="51d-7z-r0g">
+                    <tabBarItem key="tabBarItem" title="" image="Profile" selectedImage="ProfileSelected" id="51d-7z-r0g">
                         <inset key="imageInsets" minX="0.0" minY="7.5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -156,11 +156,11 @@
         <scene sceneID="Pki-gr-UBl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Dm-77-n4f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Home" selectedImage="Home" id="mLi-5c-nSw">
+                    <tabBarItem key="tabBarItem" title="" image="Home" selectedImage="HomeSelected" id="mLi-5c-nSw">
                         <inset key="imageInsets" minX="0.0" minY="7.5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Li4-zQ-C0E">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Li4-zQ-C0E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -198,9 +198,13 @@
     </scenes>
     <resources>
         <image name="Home" width="34" height="42"/>
+        <image name="HomeSelected" width="66" height="49"/>
         <image name="Profile" width="41" height="41"/>
+        <image name="ProfileSelected" width="66" height="48"/>
         <image name="Search" width="41" height="40"/>
+        <image name="SearchSelected" width="66" height="49"/>
         <image name="Upcoming" width="60" height="43"/>
+        <image name="UpcomingSelected" width="66" height="51"/>
     </resources>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
 </document>
