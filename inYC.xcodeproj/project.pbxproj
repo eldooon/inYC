@@ -15,6 +15,7 @@
 		BECD65D61DD7B5F500971DD6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD65D51DD7B5F500971DD6 /* SearchViewController.swift */; };
 		BECD65D81DD7B5FD00971DD6 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD65D71DD7B5FD00971DD6 /* UpcomingViewController.swift */; };
 		BECD65DA1DD7B60400971DD6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD65D91DD7B60400971DD6 /* ProfileViewController.swift */; };
+		BECD65DE1DD8C9E200971DD6 /* inYCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD65DD1DD8C9E200971DD6 /* inYCExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BECD65D51DD7B5F500971DD6 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BECD65D71DD7B5FD00971DD6 /* UpcomingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		BECD65D91DD7B60400971DD6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BECD65DD1DD8C9E200971DD6 /* inYCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inYCExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +62,34 @@
 		BECD65C01DD7A85B00971DD6 /* inYC */ = {
 			isa = PBXGroup;
 			children = (
+				BECD65DC1DD8C97200971DD6 /* Resources */,
+				BECD65DB1DD8C96300971DD6 /* Controllers */,
 				BECD65C11DD7A85B00971DD6 /* AppDelegate.swift */,
-				BECD65C31DD7A85B00971DD6 /* HomeViewController.swift */,
-				BECD65D51DD7B5F500971DD6 /* SearchViewController.swift */,
-				BECD65D71DD7B5FD00971DD6 /* UpcomingViewController.swift */,
-				BECD65D91DD7B60400971DD6 /* ProfileViewController.swift */,
 				BECD65C51DD7A85B00971DD6 /* Main.storyboard */,
 				BECD65C81DD7A85B00971DD6 /* Assets.xcassets */,
 				BECD65CA1DD7A85B00971DD6 /* LaunchScreen.storyboard */,
 				BECD65CD1DD7A85B00971DD6 /* Info.plist */,
 			);
 			path = inYC;
+			sourceTree = "<group>";
+		};
+		BECD65DB1DD8C96300971DD6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BECD65C31DD7A85B00971DD6 /* HomeViewController.swift */,
+				BECD65D51DD7B5F500971DD6 /* SearchViewController.swift */,
+				BECD65D71DD7B5FD00971DD6 /* UpcomingViewController.swift */,
+				BECD65D91DD7B60400971DD6 /* ProfileViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BECD65DC1DD8C97200971DD6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BECD65DD1DD8C9E200971DD6 /* inYCExtensions.swift */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +170,7 @@
 				BECD65DA1DD7B60400971DD6 /* ProfileViewController.swift in Sources */,
 				BECD65C41DD7A85B00971DD6 /* HomeViewController.swift in Sources */,
 				BECD65C21DD7A85B00971DD6 /* AppDelegate.swift in Sources */,
+				BECD65DE1DD8C9E200971DD6 /* inYCExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
