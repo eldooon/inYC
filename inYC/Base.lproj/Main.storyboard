@@ -28,11 +28,14 @@
             </objects>
             <point key="canvasLocation" x="1824.8" y="-645.42728635682158"/>
         </scene>
-        <!--Home-->
+        <!--Navigation Controller-->
         <scene sceneID="6rL-0o-fQ3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VYw-Pd-yA9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="TVq-HX-Q6D"/>
+                    <tabBarItem key="tabBarItem" title="" image="Home" selectedImage="Home" id="TVq-HX-Q6D">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-6"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="S5X-qT-qUL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -87,11 +90,13 @@
             </objects>
             <point key="canvasLocation" x="-266" y="873"/>
         </scene>
-        <!--Search-->
+        <!--Navigation Controller-->
         <scene sceneID="wcw-R0-ZjX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eWo-9a-J4t" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="Wcw-UN-jvs"/>
+                    <tabBarItem key="tabBarItem" title="" image="Search" selectedImage="Search" id="Wcw-UN-jvs">
+                        <inset key="imageInsets" minX="0.0" minY="7.5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rnJ-49-RYe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -144,11 +149,13 @@
             </objects>
             <point key="canvasLocation" x="1860" y="1436.1319340329835"/>
         </scene>
-        <!--Upcoming-->
+        <!--Navigation Controller-->
         <scene sceneID="e62-6a-eRG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dhu-Nj-49E" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Upcoming" id="I7l-S2-5fy"/>
+                    <tabBarItem key="tabBarItem" title="" image="Upcoming" selectedImage="Upcoming" id="I7l-S2-5fy">
+                        <inset key="imageInsets" minX="0.0" minY="7.5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JnP-86-AzH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -163,11 +170,13 @@
             </objects>
             <point key="canvasLocation" x="920.79999999999995" y="785.75712143928047"/>
         </scene>
-        <!--Profile-->
+        <!--Navigation Controller-->
         <scene sceneID="jpP-LH-t8C">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nS6-W8-5ey" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="51d-7z-r0g"/>
+                    <tabBarItem key="tabBarItem" title="" image="Profile" selectedImage="Profile" id="51d-7z-r0g">
+                        <inset key="imageInsets" minX="0.0" minY="7.5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ee2-8F-fUD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -183,4 +192,10 @@
             <point key="canvasLocation" x="920.79999999999995" y="1436.1319340329835"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Home" width="34" height="42"/>
+        <image name="Profile" width="41" height="41"/>
+        <image name="Search" width="41" height="40"/>
+        <image name="Upcoming" width="60" height="43"/>
+    </resources>
 </document>
