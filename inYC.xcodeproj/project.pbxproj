@@ -13,6 +13,7 @@
 		BE97AE2D1DD92BCE00F03AA3 /* RightFeaturedEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97AE2C1DD92BCE00F03AA3 /* RightFeaturedEventTableViewCell.swift */; };
 		BE97AE2F1DDBE67600F03AA3 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97AE2E1DDBE67600F03AA3 /* EventDetailViewController.swift */; };
 		BE97AE331DDBF01C00F03AA3 /* EventImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97AE321DDBF01C00F03AA3 /* EventImageCollectionViewCell.swift */; };
+		BE97AE351DDD292F00F03AA3 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97AE341DDD292F00F03AA3 /* TestData.swift */; };
 		BECD65C21DD7A85B00971DD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD65C11DD7A85B00971DD6 /* AppDelegate.swift */; };
 		BECD65C41DD7A85B00971DD6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD65C31DD7A85B00971DD6 /* HomeViewController.swift */; };
 		BECD65C71DD7A85B00971DD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BECD65C51DD7A85B00971DD6 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		BE97AE2C1DD92BCE00F03AA3 /* RightFeaturedEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightFeaturedEventTableViewCell.swift; sourceTree = "<group>"; };
 		BE97AE2E1DDBE67600F03AA3 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		BE97AE321DDBF01C00F03AA3 /* EventImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE97AE341DDD292F00F03AA3 /* TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		BECD65BE1DD7A85B00971DD6 /* inYC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inYC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECD65C11DD7A85B00971DD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BECD65C31DD7A85B00971DD6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				BECD65DD1DD8C9E200971DD6 /* inYCExtensions.swift */,
+				BE97AE341DDD292F00F03AA3 /* TestData.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				BECD65D81DD7B5FD00971DD6 /* UpcomingViewController.swift in Sources */,
 				BE97AE2D1DD92BCE00F03AA3 /* RightFeaturedEventTableViewCell.swift in Sources */,
 				BE97AE291DD8F26700F03AA3 /* EventCollectionViewCell.swift in Sources */,
+				BE97AE351DDD292F00F03AA3 /* TestData.swift in Sources */,
 				BECD65D61DD7B5F500971DD6 /* SearchViewController.swift in Sources */,
 				BE97AE331DDBF01C00F03AA3 /* EventImageCollectionViewCell.swift in Sources */,
 				BECD65DA1DD7B60400971DD6 /* ProfileViewController.swift in Sources */,
