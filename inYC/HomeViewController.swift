@@ -153,7 +153,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
 //        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! PostViewCell
 //        postDetailVC.itemImage = cell.postImage.image
 //        
-//        self.parentNavigationController?.pushViewController(postDetailVC, animated: true)
+        self.navigationController?.pushViewController(EventDetailViewController(), animated: true)
     }
     
     func setUpFeaturedTableViewCells() {
