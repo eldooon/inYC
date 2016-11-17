@@ -27,7 +27,15 @@ class eventInformation {
 
 class testData {
     
+    var eventTestData = [eventInformation]()
+    
     let testData1 = eventInformation(withEvent: "Event1", Date: "August 1", Location: "New York", Description: "Event in New York")
     let testData2 = eventInformation(withEvent: "Event2", Date: "August 1", Location: "New York", Description: "Event in New York")
     let testData3 = eventInformation(withEvent: "Event3", Date: "August 2", Location: "New York", Description: "Event in New York")
+    
+    func generateTestData () {
+        eventTestData.append(testData1)
+        eventTestData.append(testData2)
+        eventTestData.append(testData3)
+    }
 }
