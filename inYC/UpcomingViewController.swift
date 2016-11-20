@@ -10,6 +10,7 @@ import UIKit
 
 class UpcomingViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 
+    let data = testData()
     let scrollView = UIScrollView()
     let contentView = UIView()
     let upcomingLabel = UILabel()
@@ -19,6 +20,7 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegateFlowLayo
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        data.generateTestData()
         setUpEventCollectionCells()
         createLayout()
     }
@@ -77,6 +79,7 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegateFlowLayo
         
         //setup Layout
         let layout = UICollectionViewFlowLayout()
+        layout.headerReferenceSize = CGSize(width: self.view.frame.width, height: 50)
         layout.scrollDirection = UICollectionViewScrollDirection.vertical
         layout.itemSize = CGSize(width: screenWidth/1.2, height: screenWidth/2.005)
         layout.minimumLineSpacing = 20
@@ -87,6 +90,7 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegateFlowLayo
         eventCollectionView.delegate = self
         eventCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "basicCell")
         eventCollectionView.register(EventCollectionViewCell.self, forCellWithReuseIdentifier: "basicCell")
+        eventCollectionView.register(EventHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerCell")
         eventCollectionView.showsVerticalScrollIndicator = false
         eventCollectionView.showsHorizontalScrollIndicator = false
         
@@ -95,13 +99,16 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return data.eventTestData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "basicCell", for: indexPath) as! EventCollectionViewCell
         
+        cell.eventLabel.text = data.eventTestData[indexPath.item].eventName
+        cell.dateLabel.text = data.eventTestData[indexPath.item].eventDate
+        cell.locationLabel.text = data.eventTestData[indexPath.item].eventLocation
         
         return cell
     }
@@ -121,6 +128,28 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegateFlowLayo
         //        postDetailVC.itemImage = cell.postImage.image
         //
         self.navigationController?.pushViewController(EventDetailViewController(), animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        var reusableView : UICollectionReusableView? = nil
+        
+        print("IN KIND")
+        // Create header
+        if (kind == UICollectionElementKindSectionHeader) {
+            
+            print("YES")
+            // Create Header
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as! EventHeaderCollectionReusableView
+            headerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
+            headerView.headerLabel.text = data.eventTestData[indexPath.item].eventDate
+            
+            reusableView = headerView
+        }
+        
+        else {
+            print("NONE")
+        }
+        return reusableView!
     }
     
 

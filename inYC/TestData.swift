@@ -8,7 +8,7 @@
 
 import Foundation
 
-class eventInformation {
+public class eventInformation {
     
     var eventName = String()
     var eventDate = String()
@@ -25,9 +25,9 @@ class eventInformation {
     }
 }
 
-class testData {
+public class testData {
     
-    var eventTestData = [eventInformation]()
+    public var eventTestData = [eventInformation]()
     
     let testData1 = eventInformation(withEvent: "Event1", Date: "August 1", Location: "New York", Description: "Event in New York")
     let testData2 = eventInformation(withEvent: "Event2", Date: "August 1", Location: "New York", Description: "Event in New York")

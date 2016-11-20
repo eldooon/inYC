@@ -146,8 +146,7 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegateFlowL
         imageCollectionView.register(EventImageCollectionViewCell.self, forCellWithReuseIdentifier: "basicCell")
         imageCollectionView.showsVerticalScrollIndicator = false
         imageCollectionView.showsHorizontalScrollIndicator = false
-        
-        
+    
     }
     
     
@@ -162,6 +161,7 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegateFlowL
         
         return cell
     }
+
 
     /*
     // MARK: - Navigation
