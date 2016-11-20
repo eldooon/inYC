@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class eventInformation {
+public class EventInformation {
     
     var eventName = String()
     var eventDate = String()
@@ -27,11 +27,11 @@ public class eventInformation {
 
 public class testData {
     
-    public var eventTestData = [eventInformation]()
+    public var eventTestData = [EventInformation]()
     
-    let testData1 = eventInformation(withEvent: "Event1", Date: "August 1", Location: "New York", Description: "Event in New York")
-    let testData2 = eventInformation(withEvent: "Event2", Date: "August 1", Location: "New York", Description: "Event in New York")
-    let testData3 = eventInformation(withEvent: "Event3", Date: "August 2", Location: "New York", Description: "Event in New York")
+    let testData1 = EventInformation(withEvent: "Event1", Date: "August 1", Location: "New York", Description: "Event in New York")
+    let testData2 = EventInformation(withEvent: "Event2", Date: "August 1", Location: "New York", Description: "Event in New York")
+    let testData3 = EventInformation(withEvent: "Event3", Date: "August 2", Location: "New York", Description: "Event in New York")
     
     func generateTestData () {
         eventTestData.append(testData1)

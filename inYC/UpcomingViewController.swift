@@ -15,12 +15,15 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegateFlowLayo
     let contentView = UIView()
     let upcomingLabel = UILabel()
     var eventCollectionView : UICollectionView!
+    var firstSection = [EventInformation]()
+    var secondSection = [EventInformation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         data.generateTestData()
+        splitData()
         setUpEventCollectionCells()
         createLayout()
     }
@@ -28,6 +31,14 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegateFlowLayo
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func splitData () {
+        
+        firstSection.append(data.eventTestData[0])
+        firstSection.append(data.eventTestData[1])
+        secondSection.append(data.eventTestData[2])
+        print(firstSection[0])
     }
     
     func createLayout() {
@@ -46,7 +57,7 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegateFlowLayo
         scrollView.sizeToFit()
         contentView.snp.makeConstraints { (make) in
             make.width.equalTo(scrollView.snp.width)
-            make.height.equalTo(view.snp.height).multipliedBy(1.4)
+            make.height.equalTo(view.snp.height)
             make.top.equalTo(scrollView.snp.top)
             make.bottom.equalTo(scrollView.snp.bottom)
         }
@@ -97,18 +108,42 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegateFlowLayo
         
     }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.eventTestData.count
+        
+        if section == 0 && self.firstSection.count != 0 {
+            return firstSection.count
+        }
+        
+        else if section == 1 && self.secondSection.count != 0 {
+            return secondSection.count
+        }
+        
+        else {
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "basicCell", for: indexPath) as! EventCollectionViewCell
         
-        cell.eventLabel.text = data.eventTestData[indexPath.item].eventName
-        cell.dateLabel.text = data.eventTestData[indexPath.item].eventDate
-        cell.locationLabel.text = data.eventTestData[indexPath.item].eventLocation
+        var currentEvent : EventInformation?
+        if indexPath.section == 0 {
+            currentEvent = firstSection[indexPath.item]
+        }
+        
+        else {
+            currentEvent = secondSection[indexPath.item]
+        }
+        
+        cell.eventLabel.text = currentEvent?.eventName
+        cell.dateLabel.text = currentEvent?.eventDate
+        cell.locationLabel.text = currentEvent?.eventLocation
+        
         
         return cell
     }
@@ -133,22 +168,23 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegateFlowLayo
     func collectionView(_ collectionView: UICollectionView,viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         var reusableView : UICollectionReusableView? = nil
         
-        print("IN KIND")
-        // Create header
         if (kind == UICollectionElementKindSectionHeader) {
+
+            let headerView = eventCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as! EventHeaderCollectionReusableView
+//            headerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
             
-            print("YES")
-            // Create Header
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as! EventHeaderCollectionReusableView
-            headerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
-            headerView.headerLabel.text = data.eventTestData[indexPath.item].eventDate
+            var currentEvent : EventInformation?
+            if indexPath.section == 0 {
+                headerView.headerLabel.text = firstSection[indexPath.item].eventDate
+            }
+                
+            else {
+                headerView.headerLabel.text = secondSection[indexPath.item].eventDate
+            }
             
             reusableView = headerView
         }
         
-        else {
-            print("NONE")
-        }
         return reusableView!
     }
     
