@@ -57,7 +57,7 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegateFlowLayo
         scrollView.sizeToFit()
         contentView.snp.makeConstraints { (make) in
             make.width.equalTo(scrollView.snp.width)
-            make.height.equalTo(view.snp.height)
+            make.height.equalTo(view.snp.height).multipliedBy(1.2)
             make.top.equalTo(scrollView.snp.top)
             make.bottom.equalTo(scrollView.snp.bottom)
         }
@@ -76,7 +76,7 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegateFlowLayo
         eventCollectionView.backgroundColor = UIColor.clear
         eventCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(upcomingLabel.snp.bottom).offset(20)
-            make.height.equalTo(view.snp.height)
+            make.height.equalTo(contentView.snp.height)
             make.left.equalTo(contentView.snp.left).offset(10)
             make.right.equalTo(contentView.snp.right).offset(-10)
         }
