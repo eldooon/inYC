@@ -16,6 +16,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     let settingsTableView = UITableView()
     var settingFirstSection = [String]()
     var settingSecondSection = [String]()
+    var searchBarTextField = UITextField()
+    let followingTableView = UITableView()
+    var followingNames = [String : [String]]()
+    var followingSectionsTitles = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +79,23 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             make.height.equalTo(view.snp.height)
             make.width.equalTo(view.snp.width)
         }
+        
+        contentView.addSubview(searchBarTextField)
+        searchBarTextField.isHidden = true
+        searchBarTextField.borderStyle = UITextBorderStyle.bezel
+        searchBarTextField.snp.makeConstraints { (make) in
+            make.top.equalTo(segmentedControl.snp.bottom).offset(20)
+            make.width.equalTo(view.snp.width).dividedBy(1.2)
+            make.centerX.equalTo(view.snp.centerX)
+        }
+        
+        contentView.addSubview(settingsTableView)
+        settingsTableView.isScrollEnabled = false
+        settingsTableView.rowHeight = height
+        settingsTableView.snp.makeConstraints { (make) in
+            make.top.equalTo(segmentedControl.snp.bottom).offset(40)
+            make.height.equalTo(view.snp.height)
+        }
     }
     
     func generateSection() {
@@ -83,6 +104,35 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             //["First name" : "Elisa", "Last name" : "Corwin", "Email" : "elisa_corwin@guy.tv", "Address" : "4321 everlan, new york", "Change password" : "XXXXXX"]
         settingSecondSection = ["Terms + conditions", "Privacy", "Support"]
         
+        followingNames = ["A" :["Andrew"],
+                            "B" :["Brian"],
+                            "C" :["Carol"],
+                            "D" :["Daniel"],
+                            "E" :["Eldon"],
+                            "F" :["Francine"],
+                            "G" :["George"],
+                            "H" :["Henry"],
+                            "I" :["Ivane"],
+                            "J" :["Jackson"],
+                            "K" :["Kevin"],
+                            "L" :["Lorrane"],
+                            "M" :["Mason"],
+                            "N" :["Ned"],
+                            "O" :["Odin"],
+                            "P" :["Perry"],
+                            "Q" :["Quinn"],
+                            "R" :["Robert"],
+                            "S" :["Stephanie"],
+                            "T" :["Ticia"],
+                            "V" :["Vincent"],
+                            "W" :["Winnie"],
+                            "X" :["Xin"],
+                            "Y" :["Yvonne"],
+                            "Z" :["Zim"]]
+        
+        followingSectionsTitles = Array(followingNames.keys)
+        
+        
         
     }
     
@@ -90,9 +140,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         switch sender.selectedSegmentIndex {
         case 0:
-            print("one")
+            settingsTableView.isHidden = false
+            searchBarTextField.isHidden = true
         default:
-            print("two")
+            settingsTableView.isHidden = true
+            searchBarTextField.isHidden = false
             
         }
         
@@ -100,22 +152,31 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if section == 0 {
-            return settingFirstSection.count
-        }
+
+            if section == 0 {
+                return settingFirstSection.count
+            }
+                
+            else if section == 1 {
+                return settingSecondSection.count
+            }
+                
+            else {
+                return 0
+            }
+
         
-        else if section == 1 {
-            return settingSecondSection.count
-        }
-        
-        else {
-            return 0
-        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 2
+        if tableView == settingsTableView {
+            return 2
+        }
+        
+        else {
+           return followingSectionsTitles.count
+        }
     }
     
     
